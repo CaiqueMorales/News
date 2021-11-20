@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import NavBar from './NavBar'
+import Home from './pages/Home';
+import Animes from './pages/Animes';
+import Mangas from './pages/Mangas';
+import Jogos from './pages/Jogos';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App () {   
+
+    return(
+
+        <Router>
+
+            <NavBar />
+            
+            <Switch>
+
+                <Route exact path="/">
+                    <Home />
+                </Route>
+
+                <Route path="/Animes">
+                    <Animes />
+                </Route>
+
+                <Route path="/Mangas">
+                    <Mangas />
+                </Route>
+
+                <Route path="/Jogos">
+                    <Jogos />
+                </Route>
+                
+            </Switch>    
+            
+            
+        </Router>            
+
+    )
+
+
 }
 
-export default App;
+export default App

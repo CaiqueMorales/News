@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+/* ============================== Fonts ============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+
+/* ============================== CSS Variables ============================== */
+
+:root{
+
+    /* Colors */
+    --clr-primary-400: #1282A2;
+    --clr-primary-500: #04437D;
+    --clr-primary-700: #00225D;
+    --clr-primary-900: #08102B;
+
+    --clr-neutral-400: #FFFFFF;
+    --clr-neutral-500: #FFFDFC;
+    --clr-neutral-900: #000000;
+
+
+    /* Typography */
+    --fz-largest: 2.441rem;
+    --fz-larger: 1.563rem;
+    --fz-large: 1.25rem;
+    --fz-normal: 1rem;
+    --fz-small: 0.8rem;
+    --fz-smaller: 0.64rem;
+
+    --ff-accent: ;
+    --ff-body: 'Poppins', sans-serif;
+
+
+    /* Sizes */
+    --header-height: 6rem;
+
+    --p-medium: 2em;
+
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media screen and (min-width: 768px) {
+
+    :root{
+
+        /* Typography */
+        --fz-largest: 2.56rem;
+        --fz-larger: 1.713rem;
+        --fz-large: 1.4rem;
+        --fz-normal: 1.1rem;
+        --fz-small: 0.9rem;
+        --fz-smaller: 0.74rem;
+
+    }
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* ============================== HTML Reseting ============================== */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html{
+    scroll-behavior: smooth;
 }
 
-.App-link {
-  color: #61dafb;
+body{
+    line-height: 1.6;
+    font-size: var(--fz-normal);
+    font-family: var(--ff-body);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+section{
+    margin-inline: var(--p-medium);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4{
+    line-height: 1;
+}
+
+
+/* ============================== Reusable Classes ============================== */
+
+.split{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.split > *{
+    flex-basis: 100%;
+}
+
+@media screen and (min-width: 768px) {
+
+    .split{
+        flex-direction: row;
+    }
+
 }
